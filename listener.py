@@ -57,6 +57,11 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
         # TODO YOUR CODE HERE
         rows = []
         for evt in events:
+             print("DEBUG: evt.args =", evt.args)
+
+            # optional safe fallback
+            if 'to' not in evt.args:
+                print("ERROR: 'to' not in args. Available keys:", evt.args.keys())
             data = {
                 'chain': chain,
                 'token': evt.args['token'],
