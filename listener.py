@@ -60,7 +60,7 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
             data = {
                 'chain': chain,
                 'token': evt.args['token'],
-                'recipient': evt.args['receiver'],
+                'recipient': evt.args['recipient'],
                 'amount': evt.args['amount'],
                 'transactionHash': evt.transactionHash.hex(),
                 'address': evt.address,
@@ -78,7 +78,7 @@ def scan_blocks(chain, start_block, end_block, contract_address, eventfile='depo
                 data = {
                     'chain': chain,
                     'token': evt.args['token'],
-                    'recipient': evt.args['receiver'],
+                    'recipient': evt.args['recipient'],
                     'amount': evt.args['amount'],
                     'transactionHash': evt.transactionHash.hex(),
                     'address': evt.address,
